@@ -1,0 +1,20 @@
+.form{
+    background-color: antiquewhite;
+    /* padding: .5rem 1rem; */
+    /* margin: auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+    gap: 1rem;
+}
+
+.form input , button {
+    padding: .3rem 1rem;
+}
+
+.form button {
+    /* border-radius: .4rem; */
+    cursor: pointer;
+
+}
