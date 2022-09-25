@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import './inputItemStyle.css'
 
-function EditItem({ setIsEditing, setModifiedItem, inputValue }) {
+function EditItem({ setIsEditing, setModifiedItem, inputValue , makeDark }) {
 
     const [editValue, setEditValue] = useState(inputValue);
 
@@ -18,9 +19,11 @@ function EditItem({ setIsEditing, setModifiedItem, inputValue }) {
     return (
         <form onSubmit={formSubmitHandler}>
             <input
+                className='edit-form'
                 type="text"
                 value={editValue}
                 onChange={inputChangeHandler}
+                onFocus = {makeDark}
             />
         </form>
     )

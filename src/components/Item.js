@@ -1,9 +1,5 @@
 import React, { useState } from 'react'
 import EditItem from './EditItem'
-// import delete from '..../images/delete-btn'
-// import edit from './images/edit-btn'
-
-
 
 const Item = ({item}) => {
 
@@ -12,16 +8,18 @@ const Item = ({item}) => {
     const [modifiedItem, setModifiedItem] = useState('')
 
     function toggleChecked(){
-        //console.log('toggleChecked is fired!')
         setisChecked(prev => !prev)
     }
 
+    function makeDark(e){
+        e.target.style.backgroundColor = 'black'
+        e.target.style.color = 'white'
+    }
     function handleEdit(e){
         setIsEditing(prev => !prev);
     }
 
     function handleDelete(e){
-        //console.log('handleDelete fired!')
         e.target.parentElement.parentElement.remove();
     }
     return (
@@ -34,6 +32,7 @@ const Item = ({item}) => {
                 inputValue = {modifiedItem?modifiedItem:item} 
                 setIsEditing={setIsEditing}
                 setModifiedItem = {setModifiedItem}
+                makeDark = {makeDark}
                 />
                 :
                 <div className='flex-items'>{modifiedItem? modifiedItem : item}</div>
