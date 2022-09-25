@@ -1,7 +1,18 @@
-import React  , { useState } from 'react'
+import React  , { useState , useEffect} from 'react'
 
-function EditItem({setIsEditing , setModifiedItem}) {
-const [editValue, setEditValue] = useState('');
+function EditItem({setIsEditing , setModifiedItem , inputValue}) {
+
+// console.log('EditItem.js inputValue = ' , inputValue)
+// const [initialValue, setinitialValue] = useState(inputValue)
+const [editValue, setEditValue] = useState(inputValue);
+// const [editValue, setEditValue] = useState('');
+
+// useEffect(() => {
+
+//     setEditValue(inputValue);
+
+// }, [])
+
 
 function formSubmitHandler(e){
 
@@ -18,7 +29,11 @@ function inputChangeHandler(e){
 }
   return (
     <form onSubmit={formSubmitHandler}>
-        <input type="text" defaultValue='default value' value = {editValue}  onChange={inputChangeHandler}/>
+        <input 
+            type="text" 
+            value = {editValue}  
+            onChange={inputChangeHandler}
+        />
     </form>
   )
 }
